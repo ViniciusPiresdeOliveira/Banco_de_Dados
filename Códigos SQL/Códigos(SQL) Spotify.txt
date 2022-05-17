@@ -1,0 +1,47 @@
+create table genero (
+	id integer primary key autoincrement,
+	nome text
+);
+
+create table genero (
+	id integer primary key autoincrement,
+	nome text
+);
+
+create table pais (
+	id integer primary key autoincrement,
+	nome text not null, -- não pode receber valores nulos
+	sigla text
+);
+
+
+create table artista (
+	id integer primary key autoincrement,
+	nome text,
+	popularidade integer,
+	seguidores integer
+);
+
+create table Música(
+id integer primary key autoincrement,
+nome text,
+url text,
+id_Artista integer,
+foreign key (id_Artista) references Artista(id)
+)
+
+create table Artista_Gênero(
+id integer primary key autoincrement,
+id_Artista integer,
+id_Gênero integer,
+foreign key (id_Artista) references Artista(id),
+foreign key (id_Gênero) references Gênero(id)
+);
+
+create table País_Música(
+id integer primary key autoincrement,
+id_País integer,
+id_Música integer,
+foreign key (id_País) references País(id),
+foreign key (id_Música) references Música(id)
+);
