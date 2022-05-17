@@ -1,3 +1,0 @@
-create table aluno (matricula integer primary key,nome varchar(20))
-insert into aluno (matricula, nome) values (125, "Ana"), (124, "Maria");
-select * from aluno
